@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#005A9E",
+            secondary: "#003F6E",
+            accent: "#FFC107",
+            "background-light": "#F8F9FA",
+            "background-dark": "#121212",
+            "text-primary": "#212529",
+            "text-secondary": "#6C757D",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.375rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    .gradient-background {
+      background: linear-gradient(135deg, #005A9E 0%, #003F6E 100%);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-background-light text-text-primary dark:bg-background-dark dark:text-gray-200 font-display">
+
+<header class="bg-white dark:bg-secondary shadow-md">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v6m0 0l3-3m-3 3l-3-3M12 3v6a3 3 0 006 0v-6a3 3 0 00-6 0zM9 20h6"></path>
+</svg>
+<span class="text-xl font-bold text-primary dark:text-white">CorpSolutions</span>
+</div>
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#">Home</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#">Services</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#">Case Studies</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#">About Us</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition duration-300">Get a Quote</button>
+<button class="md:hidden flex items-center text-primary dark:text-white">
+<span class="material-icons text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+
+<main>
+<section class="gradient-background relative py-24 md:py-40 text-white overflow-hidden">
+<div class="container mx-auto px-6 text-center relative z-10">
+<h1 class="text-5xl md:text-7xl font-extrabold leading-tight">Innovating Your Business Future</h1>
+<p class="mt-6 text-xl md:text-2xl font-light max-w-3xl mx-auto">
+          Empowering enterprises with cutting-edge solutions and strategic insights for sustainable growth and unparalleled success in a dynamic market.
+        </p>
+<div class="mt-12">
+<a href="#" class="px-10 py-4 bg-accent text-secondary rounded-lg font-semibold text-lg shadow-lg hover:bg-yellow-500 transition duration-300 inline-block">Explore Our Services</a>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-40 -mb-20">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+<path fill="#ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,138.7C672,117,768,107,864,106.7C960,107,1056,117,1152,144C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+</div>
+</section>
+
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-base font-semibold text-primary uppercase tracking-wider">Our Core Strengths</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2 text-text-primary dark:text-gray-200">Delivering Excellence Through Expertise</h3>
+<p class="mt-6 max-w-4xl mx-auto text-text-secondary dark:text-gray-400 text-lg leading-relaxed">
+          We pride ourselves on a foundation of deep industry knowledge, a commitment to innovation, and a client-centric approach. Our team of seasoned professionals works collaboratively to understand your unique challenges and deliver tailored solutions that drive tangible results and foster long-term partnerships.
+        </p>
+<div class="grid md:grid-cols-3 gap-12 mt-16">
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">settings_applications</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">Strategic Planning</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">Develop robust strategies aligned with your business objectives, ensuring a clear roadmap for success.</p>
+</div>
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">trending_up</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">Growth Acceleration</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">Implement data-driven initiatives to optimize performance and unlock new avenues for expansion.</p>
+</div>
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">verified</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">Risk Management</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">Proactively identify and mitigate potential risks, safeguarding your operations and investments.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-base font-semibold text-primary uppercase tracking-wider">Our Services</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2 text-text-primary dark:text-gray-200">Comprehensive Solutions for Your Business</h3>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="card-hover p-8 bg-background-light dark:bg-gray-800 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mr-6">
+<span class="material-icons text-white text-4xl">domain</span>
+</div>
+<h4 class="text-2xl font-bold text-text-primary dark:text-gray-200">Corporate Strategy</h4>
+</div>
+<p class="text-text-secondary dark:text-gray-400 text-base leading-relaxed">We partner with you to define and execute strategic initiatives that drive market leadership and long-term value creation. Our approach involves in-depth market analysis, competitive benchmarking, and the development of actionable plans tailored to your unique business context.</p>
+<div class="mt-6">
+<a href="#" class="text-primary font-semibold hover:underline">Learn More &rarr;</a>
+</div>
+</div>
+<div class="card-hover p-8 bg-background-light dark:bg-gray-800 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mr-6">
+<span class="material-icons text-white text-4xl">chart_pie</span>
+</div>
+<h4 class="text-2xl font-bold text-text-primary dark:text-gray-200">Data Analytics & Insights</h4>
+</div>
+<p class="text-text-secondary dark:text-gray-400 text-base leading-relaxed">Leverage the power of data with our advanced analytics services. We transform raw data into actionable insights, enabling informed decision-making, operational efficiency, and enhanced customer understanding.</p>
+<div class="mt-6">
+<a href="#" class="text-primary font-semibold hover:underline">Learn More &rarr;</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-primary text-white">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-base font-semibold uppercase tracking-wider">Trusted by Leading Organizations</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2">Building Lasting Partnerships</h3>
+<p class="mt-6 max-w-3xl mx-auto text-lg leading-relaxed opacity-90">
+          Our commitment to integrity, transparency, and delivering measurable results has earned us the trust of diverse clients across various industries. We believe in forging strong, collaborative relationships built on mutual respect and shared success.
+        </p>
+<div class="flex justify-center mt-12 space-x-8">
+<img src="[IMAGE_PLACEHOLDER_1]" alt="Client Logo 1" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"/>
+<img src="[IMAGE_PLACEHOLDER_2]" alt="Client Logo 2" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"/>
+<img src="[IMAGE_PLACEHOLDER_3]" alt="Client Logo 3" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"/>
+<img src="[IMAGE_PLACEHOLDER_4]" alt="Client Logo 4" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300"/>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="bg-text-primary dark:bg-gray-900 text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-12">
+<div>
+<div class="flex items-center mb-4">
+<svg class="w-8 h-8 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v6m0 0l3-3m-3 3l-3-3M12 3v6a3 3 0 006 0v-6a3 3 0 00-6 0zM9 20h6"></path>
+</svg>
+<span class="text-xl font-bold">CorpSolutions</span>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed">Your trusted partner for innovative business solutions and strategic growth. We empower your vision.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">Quick Links</h4>
+<ul>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">Legal</h4>
+<ul>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Settings</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">Contact Info</h4>
+<p class="text-gray-400 mb-3">123 Business Ave, Suite 456</p>
+<p class="text-gray-400 mb-3">Metropolis, CA 90210</p>
+<p class="text-gray-400 mb-3"><a href="mailto:info@corpsolutions.com" class="hover:text-white transition duration-300">info@corpsolutions.com</a></p>
+<p class="text-gray-400"><a href="tel:+1234567890" class="hover:text-white transition duration-300">+1 (123) 456-7890</a></p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+<p>&copy; 2023 CorpSolutions. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

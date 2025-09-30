@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>아이비솔루션 - IBSolution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#005A9E",
+            secondary: "#003F6E",
+            accent: "#FFC107",
+            "background-light": "#F8F9FA",
+            "background-dark": "#121212",
+            "text-primary": "#212529",
+            "text-secondary": "#6C757D",
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.375rem",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    .gradient-background {
+      background: linear-gradient(135deg, #005A9E 0%, #003F6E 100%);
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-background-light text-text-primary dark:bg-background-dark dark:text-gray-200 font-display">
+
+<header class="bg-white dark:bg-secondary shadow-md">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<img src="original-site/wp-content/uploads/2015/07/ci1.png" alt="IBSolution Logo" class="w-10 h-10">
+<span class="text-xl font-bold text-primary dark:text-white">IBSolution</span>
+</div>
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#home">홈</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#services">서비스</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#about">회사소개</a>
+<a class="text-text-primary dark:text-gray-300 hover:text-primary font-medium" href="#contact">연락처</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block px-6 py-2 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition duration-300">견적문의</button>
+<button class="md:hidden flex items-center text-primary dark:text-white">
+<span class="material-icons text-3xl">menu</span>
+</button>
+</div>
+</div>
+</header>
+
+<main>
+<section id="home" class="relative py-24 md:py-40 text-white overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); filter: brightness(0.4);"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80"></div>
+<div class="container mx-auto px-6 text-center relative z-10">
+<h1 class="text-5xl md:text-7xl font-extrabold leading-tight">혁신적인 IT 솔루션으로<br>비즈니스의 미래를 설계합니다</h1>
+<p class="mt-6 text-xl md:text-2xl font-light max-w-3xl mx-auto">
+          시스템 통합부터 모바일 앱 개발까지, 고객 맞춤형 IT 솔루션으로 디지털 혁신을 선도하는 아이비솔루션입니다.
+        </p>
+<div class="mt-12">
+<a href="#services" class="px-10 py-4 bg-accent text-secondary rounded-lg font-semibold text-lg shadow-lg hover:bg-yellow-500 transition duration-300 inline-block">서비스 살펴보기</a>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-40 -mb-20 z-10">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+<path fill="#ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,138.7C672,117,768,107,864,106.7C960,107,1056,117,1152,144C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+</div>
+</section>
+
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-base font-semibold text-primary uppercase tracking-wider">핵심 역량</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2 text-text-primary dark:text-gray-200">전문성을 바탕으로 한 탁월함</h3>
+<p class="mt-6 max-w-4xl mx-auto text-text-secondary dark:text-gray-400 text-lg leading-relaxed">
+          깊이 있는 산업 지식과 혁신적인 기술력, 그리고 고객 중심의 접근 방식을 바탕으로 최적화된 솔루션을 제공합니다.
+          숙련된 전문가 팀이 고객의 고유한 도전 과제를 파악하고 실질적인 성과를 창출하는 맞춤형 솔루션을 제공합니다.
+        </p>
+<div class="grid md:grid-cols-3 gap-12 mt-16">
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">integration_instructions</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">시스템 통합</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">HW, SW 및 시스템을 통합하여 고객 환경에 최적화된 정보시스템 구축 서비스를 제공합니다.</p>
+</div>
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">code</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">솔루션 개발</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">인터넷, 모바일, IT융합 등 다양한 분야의 솔루션을 연구 개발하여 새로운 시장을 창출합니다.</p>
+</div>
+<div class="flex flex-col items-center p-8 bg-white dark:bg-gray-800 rounded-xl shadow-sm card-hover">
+<div class="w-24 h-24 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+<span class="material-icons text-primary text-5xl">precision_manufacturing</span>
+</div>
+<h4 class="text-xl font-bold mt-4 mb-3 text-text-primary dark:text-gray-200">모듈화 및 자동화</h4>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">모듈화와 자동화를 통해 개발 생산성과 재사용성을 높이고 유지보수가 용이한 시스템을 구축합니다.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="py-24 bg-white dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-base font-semibold text-primary uppercase tracking-wider">주요 서비스</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2 text-text-primary dark:text-gray-200">비즈니스를 위한 포괄적인 솔루션</h3>
+</div>
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="card-hover p-8 bg-background-light dark:bg-gray-800 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mr-6">
+<span class="material-icons text-white text-4xl">business</span>
+</div>
+<h4 class="text-2xl font-bold text-text-primary dark:text-gray-200">시스템통합(SI) 서비스</h4>
+</div>
+<p class="text-text-secondary dark:text-gray-400 text-base leading-relaxed">빠르게 발전하는 정보기술 환경 하에서 고객의 환경과 요구사항에 가장 적합한 정보시스템 구축 서비스를 제공하기 위해서 HW, SW 및 시스템을 통합하는 서비스를 제공합니다.</p>
+<div class="mt-6">
+<a href="#contact" class="text-primary font-semibold hover:underline">자세히 보기 →</a>
+</div>
+</div>
+<div class="card-hover p-8 bg-background-light dark:bg-gray-800 rounded-xl shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mr-6">
+<span class="material-icons text-white text-4xl">mobile_friendly</span>
+</div>
+<h4 class="text-2xl font-bold text-text-primary dark:text-gray-200">모바일 앱 개발</h4>
+</div>
+<p class="text-text-secondary dark:text-gray-400 text-base leading-relaxed">언제나 도전하는 마인드로 인터넷, 모바일, IT융합 등에 대한 솔루션을 연구 개발하고 새로운 시장 창출에 도전합니다. 사용자 중심의 UI/UX 설계로 최적의 모바일 경험을 제공합니다.</p>
+<div class="mt-6">
+<a href="#contact" class="text-primary font-semibold hover:underline">자세히 보기 →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 bg-primary text-white">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-base font-semibold uppercase tracking-wider">파트너십</h2>
+<h3 class="text-4xl md:text-5xl font-bold mt-2">신뢰할 수 있는 기술 파트너</h3>
+<p class="mt-6 max-w-3xl mx-auto text-lg leading-relaxed opacity-90">
+          무결성, 투명성, 그리고 측정 가능한 결과 제공에 대한 우리의 약속으로 다양한 산업 분야의 고객들로부터 신뢰를 받고 있습니다.
+          상호 존중과 공동 성공을 기반으로 한 강력하고 협력적인 관계 구축을 믿습니다.
+        </p>
+<div class="flex justify-center mt-12 space-x-8">
+<img src="original-site/wp-content/uploads/2015/07/mimg02.jpg" alt="프로젝트 이미지 1" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300 rounded"/>
+<img src="original-site/wp-content/uploads/2015/07/mimg1.jpg.jpg" alt="프로젝트 이미지 2" class="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition duration-300 rounded"/>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer id="contact" class="bg-text-primary dark:bg-gray-900 text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-12">
+<div>
+<div class="flex items-center mb-4">
+<img src="original-site/wp-content/uploads/2015/07/foot_ci2.png" alt="IBSolution Footer Logo" class="w-8 h-8 mr-2">
+<span class="text-xl font-bold">IBSolution</span>
+</div>
+<p class="text-sm text-gray-400 leading-relaxed">혁신적인 비즈니스 솔루션과 전략적 성장을 위한 신뢰할 수 있는 파트너. 고객의 비전을 실현합니다.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">바로가기</h4>
+<ul>
+<li class="mb-3"><a href="#services" class="text-gray-400 hover:text-white transition duration-300">서비스</a></li>
+<li class="mb-3"><a href="#about" class="text-gray-400 hover:text-white transition duration-300">회사소개</a></li>
+<li class="mb-3"><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">연락처</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">견적문의</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">약관</h4>
+<ul>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">서비스 이용약관</a></li>
+<li class="mb-3"><a href="#" class="text-gray-400 hover:text-white transition duration-300">개인정보처리방침</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">쿠키 설정</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-5">연락처 정보</h4>
+<p class="text-gray-400 mb-3">서울특별시 강남구</p>
+<p class="text-gray-400 mb-3">테헤란로 123, 456호</p>
+<p class="text-gray-400 mb-3"><a href="mailto:info@ibsolution.co.kr" class="hover:text-white transition duration-300">info@ibsolution.co.kr</a></p>
+<p class="text-gray-400"><a href="tel:+82-2-1234-5678" class="hover:text-white transition duration-300">+82-2-1234-5678</a></p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+<p>&copy; 2023 IBSolution. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
