@@ -446,31 +446,31 @@
                 </div>
               </div>
             </div>
-            <form class="rounded-3xl bg-white/10 p-8 backdrop-blur h-full flex flex-col">
+            <form action="send-contact.php" method="POST" class="rounded-3xl bg-white/10 p-8 backdrop-blur h-full flex flex-col">
               <h3 class="text-lg font-semibold">상담신청</h3>
-              <p class="mt-2 text-sm text-white/70">전문가 상담을 통해 맞춤형 솔루션을 1시간 내 답변드립니다.</p>
+              <p class="mt-2 text-sm text-white/70">IT 전문가가 고객의 요구사항을 분석하여 맞춤형 솔루션을 제공합니다.</p>
               <div class="mt-8 space-y-5">
                 <div>
                   <label for="name" class="block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">성함</label>
-                  <input id="name" type="text" placeholder="홍길동" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
+                  <input id="name" name="성함" type="text" placeholder="홍길동" required class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
                 </div>
                 <div>
                   <label for="company" class="block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">회사/기관</label>
-                  <input id="company" type="text" placeholder="회사명을 입력하세요" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
+                  <input id="company" name="회사/기관" type="text" placeholder="회사명을 입력하세요" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
                 </div>
                 <div class="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label for="email" class="block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">이메일</label>
-                    <input id="email" type="email" placeholder="name@email.com" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
+                    <input id="email" name="이메일" type="email" placeholder="name@email.com" required class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
                   </div>
                   <div>
                     <label for="phone" class="block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">연락처</label>
-                    <input id="phone" type="tel" placeholder="010-0000-0000" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
+                    <input id="phone" name="연락처" type="tel" placeholder="010-0000-0000" class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none" />
                   </div>
                 </div>
                 <div>
                   <label for="message" class="block text-xs font-semibold uppercase tracking-[0.2em] text-white/70">상담 내용</label>
-                  <textarea id="message" rows="4" placeholder="프로젝트 규모, 예산, 일정 등 상세한 요구사항을 알려주세요." class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none"></textarea>
+                  <textarea id="message" name="상담내용" rows="4" placeholder="프로젝트 규모, 예산, 일정 등 상세한 요구사항을 알려주세요." required class="mt-2 w-full rounded-lg border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-primary focus:outline-none"></textarea>
                 </div>
               </div>
               <button type="submit" class="mt-8 w-full rounded-full bg-gradient-to-r from-primary to-primary-dark px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:shadow-primary/50">
