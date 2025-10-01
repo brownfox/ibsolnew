@@ -297,7 +297,7 @@
                   <div class="flex-1 text-center text-xs text-secondary/50 font-mono">www.kiscon.net</div>
                 </div>
                 <div class="border-t border-secondary/10 overflow-hidden">
-                  <img src="original-site/images/kiscon-screenshot.png" alt="건설산업지식정보시스템(KISCON)" class="w-full h-48 object-cover" />
+                  <img src="images/kiscon-screenshot.png" alt="건설산업지식정보시스템(KISCON)" class="w-full h-48 object-cover" />
                 </div>
               </div>
               <div class="mt-6 flex-1">
@@ -320,7 +320,7 @@
                   <div class="flex-1 text-center text-xs text-secondary/50 font-mono">www.swit.or.kr</div>
                 </div>
                 <div class="border-t border-secondary/10 overflow-hidden">
-                  <img src="original-site/images/swit-screenshot.png" alt="소프트웨어산업정보시스템(SWIT)" class="w-full h-48 object-cover" />
+                  <img src="images/swit-screenshot.png" alt="소프트웨어산업정보시스템(SWIT)" class="w-full h-48 object-cover" />
                 </div>
               </div>
               <div class="mt-6 flex-1">
@@ -343,7 +343,7 @@
                   <div class="flex-1 text-center text-xs text-secondary/50 font-mono">www.tocycle.com</div>
                 </div>
                 <div class="border-t border-secondary/10 overflow-hidden">
-                  <img src="original-site/images/tocycle-screenshot.png" alt="투사이클(TOCYCLE)" class="w-full h-48 object-cover" />
+                  <img src="images/tocycle-screenshot.png" alt="투사이클(TOCYCLE)" class="w-full h-48 object-cover" />
                 </div>
               </div>
               <div class="mt-6 flex-1">
@@ -357,7 +357,7 @@
             </article>
             <article class="flex flex-col rounded-3xl border border-secondary/10 bg-background p-8 shadow-sm shadow-secondary/10 hover:shadow-md transition-shadow">
               <div class="rounded-2xl overflow-hidden shadow-lg">
-                <img src="original-site/images/appmake-screenshot.png" alt="앱메이크 솔루션" class="w-full object-cover" style="height: 232px;" />
+                <img src="images/appmake-screenshot.png" alt="앱메이크 솔루션" class="w-full object-cover" style="height: 232px;" />
               </div>
               <div class="mt-6 flex-1">
                 <h3 class="text-xl font-semibold text-secondary">다수의 앱개발 프로젝트</h3>
