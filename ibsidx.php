@@ -45,7 +45,7 @@
     <header class="fixed inset-x-0 top-0 z-30 border-b border-white/10 bg-secondary/70 backdrop-blur">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#top" class="flex items-center gap-3 text-white">
-          <img src="original-site/wp-content/uploads/2015/07/ci1.png" alt="IBSolution" class="h-8 w-auto" />
+          <img src="images/ci1.png" alt="IBSolution" class="h-8 w-auto" />
           <span class="flex flex-col leading-tight">
             <span class="text-[11px] text-white/70">Innovative Business Solution</span>
           </span>
@@ -343,7 +343,7 @@
                   <div class="flex-1 text-center text-xs text-secondary/50 font-mono">www.tocycle.com</div>
                 </div>
                 <div class="border-t border-secondary/10 overflow-hidden">
-                  <img src="images/tocycle-screenshot.png" alt="투사이클(TOCYCLE)" class="w-full h-48 object-cover" />
+                  <img src="images/tocycle-screenshot.png" alt="토사이클(TOCYCLE)" class="w-full h-48 object-cover" />
                 </div>
               </div>
               <div class="mt-6 flex-1">
