@@ -58,10 +58,21 @@
           <a href="#contact" class="transition hover:text-primary-light">연락처</a>
         </nav>
         <a href="#contact" class="hidden rounded-full bg-gradient-to-r from-primary to-primary-dark px-5 py-2 text-sm font-semibold text-white shadow-card transition hover:shadow-lg hover:shadow-primary/40 lg:inline-flex">상담 문의</a>
-        <button type="button" class="inline-flex items-center gap-1 rounded-full border border-white/30 px-3 py-2 text-white lg:hidden" aria-label="Toggle menu">
+        <button type="button" id="mobile-menu-button" class="inline-flex items-center gap-1 rounded-full border border-white/30 px-3 py-2 text-white lg:hidden" aria-label="Toggle menu">
           <span class="material-icons text-base">menu</span>
           <span class="text-xs">Menu</span>
         </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-secondary/95 backdrop-blur lg:hidden">
+        <nav class="mx-auto max-w-7xl px-4 py-6 flex flex-col gap-4 sm:px-6">
+          <a href="#services" class="text-white/80 hover:text-primary-light transition py-2 border-b border-white/10">서비스</a>
+          <a href="#solutions" class="text-white/80 hover:text-primary-light transition py-2 border-b border-white/10">솔루션</a>
+          <a href="#cases" class="text-white/80 hover:text-primary-light transition py-2 border-b border-white/10">포트폴리오</a>
+          <a href="#company" class="text-white/80 hover:text-primary-light transition py-2 border-b border-white/10">회사소개</a>
+          <a href="#contact" class="text-white/80 hover:text-primary-light transition py-2 border-b border-white/10">연락처</a>
+          <a href="#contact" class="mt-2 rounded-full bg-gradient-to-r from-primary to-primary-dark px-5 py-3 text-sm font-semibold text-white text-center shadow-card">상담 문의</a>
+        </nav>
       </div>
     </header>
 
@@ -498,5 +509,31 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuButton.querySelector('.material-icons');
+
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      // Toggle menu icon between 'menu' and 'close'
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.textContent = 'menu';
+      } else {
+        menuIcon.textContent = 'close';
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        menuIcon.textContent = 'menu';
+      });
+    });
+  </script>
 </body>
 </html>
