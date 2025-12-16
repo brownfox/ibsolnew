@@ -38,6 +38,16 @@
       background: radial-gradient(circle at top left, rgba(241, 86, 49, 0.35), transparent 55%),
                   radial-gradient(circle at bottom right, rgba(27, 44, 75, 0.7), rgba(12, 20, 36, 0.95));
     }
+    
+    #waveCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+      cursor: none;
+    }
   </style>
 </head>
 <body class="bg-background font-sans text-secondary">
@@ -79,8 +89,9 @@
     <main class="flex-1">
       <section class="relative overflow-hidden text-white">
         <div class="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" alt="Technology Background" class="h-full w-full object-cover" style="filter: brightness(0.45);" />
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop" alt="Technology Background" class="h-full w-full object-cover" style="filter: brightness(0.35);" />
           <div class="absolute inset-0 bg-gradient-to-br from-secondary/70 via-secondary-soft/60 to-primary/30"></div>
+          <canvas id="waveCanvas"></canvas>
         </div>
         <div class="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 pb-28 pt-44 text-center sm:px-6 lg:px-8">
           <div class="space-y-6">
@@ -511,6 +522,211 @@
   </div>
 
   <script>
+    // Flowing Wave Animation
+    (function() {
+      const canvas = document.getElementById('waveCanvas');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      let waves = [];
+      let mouse = { x: -1000, y: -1000, radius: 200, active: false };
+      
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      
+      resizeCanvas();
+      
+      window.addEventListener('resize', function() {
+        resizeCanvas();
+        initWaves();
+      });
+      
+      // Track mouse movement on the entire section
+      const heroSection = canvas.closest('section');
+      heroSection.addEventListener('mousemove', function(event) {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = event.clientX - rect.left;
+        mouse.y = event.clientY - rect.top;
+        mouse.active = true;
+      });
+      
+      heroSection.addEventListener('mouseleave', function() {
+        mouse.active = false;
+        mouse.x = -1000;
+        mouse.y = -1000;
+      });
+      
+      class Wave {
+        constructor(yOffset, amplitude, frequency, speed, color, width) {
+          this.yOffset = yOffset;
+          this.amplitude = amplitude;
+          this.frequency = frequency;
+          this.speed = speed;
+          this.color = color;
+          this.width = width;
+          this.increment = 0;
+        }
+        
+        draw() {
+          ctx.beginPath();
+          ctx.moveTo(0, canvas.height / 2);
+          
+          for (let i = 0; i < canvas.width; i += 5) {
+            let amplitudeModifier = 1;
+            
+            if (mouse.active) {
+              const distanceFromMouse = Math.sqrt(
+                Math.pow(i - mouse.x, 2) + Math.pow(this.yOffset - mouse.y, 2)
+              );
+              const mouseEffect = Math.max(0, 1 - distanceFromMouse / mouse.radius);
+              amplitudeModifier = 1 + mouseEffect * 3;
+            }
+            
+            const y = this.yOffset + 
+                     Math.sin((i * this.frequency) + this.increment) * this.amplitude * amplitudeModifier;
+            ctx.lineTo(i, y);
+          }
+          
+          ctx.lineTo(canvas.width, canvas.height / 2);
+          ctx.strokeStyle = this.color;
+          ctx.lineWidth = this.width;
+          ctx.stroke();
+          
+          this.increment += this.speed;
+        }
+      }
+      
+      function initWaves() {
+        waves = [
+          new Wave(canvas.height * 0.3, 30, 0.01, 0.02, 'rgba(241, 86, 49, 0.15)', 2),
+          new Wave(canvas.height * 0.4, 40, 0.008, 0.025, 'rgba(255, 154, 124, 0.12)', 2.5),
+          new Wave(canvas.height * 0.5, 35, 0.012, 0.018, 'rgba(255, 255, 255, 0.08)', 2),
+          new Wave(canvas.height * 0.6, 45, 0.009, 0.022, 'rgba(241, 86, 49, 0.1)', 3),
+          new Wave(canvas.height * 0.7, 25, 0.015, 0.03, 'rgba(255, 154, 124, 0.06)', 2),
+        ];
+      }
+      
+      // Add floating geometric shapes
+      const shapes = [];
+      class FloatingShape {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.baseX = this.x;
+          this.baseY = this.y;
+          this.size = Math.random() * 60 + 20;
+          this.speedX = (Math.random() - 0.5) * 0.5;
+          this.speedY = (Math.random() - 0.5) * 0.5;
+          this.rotation = Math.random() * Math.PI * 2;
+          this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+          this.type = Math.floor(Math.random() * 3);
+        }
+        
+        update() {
+          // Regular movement
+          this.baseX += this.speedX;
+          this.baseY += this.speedY;
+          this.rotation += this.rotationSpeed;
+          
+          if (mouse.active) {
+            // Calculate distance from mouse
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // React to mouse proximity
+            if (distance < mouse.radius * 1.5) {
+              const force = (mouse.radius * 1.5 - distance) / (mouse.radius * 1.5);
+              const angle = Math.atan2(dy, dx);
+              this.x -= Math.cos(angle) * force * 8;
+              this.y -= Math.sin(angle) * force * 8;
+              
+              // Scale based on proximity
+              this.currentScale = 1 + force * 0.8;
+            } else {
+              // Return to base position
+              this.x += (this.baseX - this.x) * 0.08;
+              this.y += (this.baseY - this.y) * 0.08;
+              this.currentScale = 1;
+            }
+          } else {
+            // Return to base position when mouse is not active
+            this.x += (this.baseX - this.x) * 0.05;
+            this.y += (this.baseY - this.y) * 0.05;
+            this.currentScale = 1;
+          }
+          
+          if (this.baseX < -100) this.baseX = canvas.width + 100;
+          if (this.baseX > canvas.width + 100) this.baseX = -100;
+          if (this.baseY < -100) this.baseY = canvas.height + 100;
+          if (this.baseY > canvas.height + 100) this.baseY = -100;
+        }
+        
+        draw() {
+          let opacity = 0.15;
+          
+          if (mouse.active) {
+            const distanceFromMouse = Math.sqrt(
+              Math.pow(this.x - mouse.x, 2) + Math.pow(this.y - mouse.y, 2)
+            );
+            const opacityEffect = Math.max(0, 1 - distanceFromMouse / (mouse.radius * 1.5));
+            opacity = 0.15 + opacityEffect * 0.4;
+          }
+          
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+          ctx.scale(this.currentScale || 1, this.currentScale || 1);
+          ctx.strokeStyle = `rgba(241, 86, 49, ${opacity})`;
+          ctx.lineWidth = 2;
+          
+          if (this.type === 0) {
+            // Circle
+            ctx.beginPath();
+            ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+            ctx.stroke();
+          } else if (this.type === 1) {
+            // Triangle
+            ctx.beginPath();
+            ctx.moveTo(0, -this.size / 2);
+            ctx.lineTo(this.size / 2, this.size / 2);
+            ctx.lineTo(-this.size / 2, this.size / 2);
+            ctx.closePath();
+            ctx.stroke();
+          } else {
+            // Square
+            ctx.strokeRect(-this.size / 2, -this.size / 2, this.size, this.size);
+          }
+          
+          ctx.restore();
+        }
+      }
+      
+      for (let i = 0; i < 8; i++) {
+        shapes.push(new FloatingShape());
+      }
+      
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        shapes.forEach(shape => {
+          shape.update();
+          shape.draw();
+        });
+        
+        waves.forEach(wave => {
+          wave.draw();
+        });
+        
+        requestAnimationFrame(animate);
+      }
+      
+      initWaves();
+      animate();
+    })();
+
     // Mobile menu toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
